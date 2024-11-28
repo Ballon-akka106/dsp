@@ -1,0 +1,34 @@
+clc;
+clearall;
+closeall;
+x=input('enter the first input sequence ');
+h=input('enter the second input sequence');
+n1=length(x);
+n2=length(h);
+n=n1+n2-1;
+X=fft(x,n);
+H=fft(h,n);
+y=X.*H;
+Y=ifft(y);
+disp('linear convolution output is:');
+disp(Y);
+t1=0:n1-1;
+subplot(1,3,1);
+stem(t1,x);
+Xlabel('n->')
+Ylabel('amplitude');
+title('first input sequence');
+t2=0:n2-1;
+subplot(1,3,2);
+stem(t2,h);
+Xlabel('n->');
+Ylabel('amplitude');
+title('second input sequence');
+t=0:1:n-1;
+subplot(1,3,3);
+stem(t,y);
+Xlabel('n->');
+Ylabel('amplitude->');
+title('output sequence');
+
+
