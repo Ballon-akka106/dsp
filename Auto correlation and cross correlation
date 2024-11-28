@@ -1,0 +1,31 @@
+clc; 
+x= input('Enter the first sequence'); 
+y= input('Enter the second sequence'); 
+z= xcorr(x,y) 
+a= xcorr(x) 
+figure; 
+subplot(2,2,1); 
+stem(x); 
+xlabel('Time'); 
+ylabel('Amplitude'); 
+title('Input x'); 
+subplot(2,2,2); 
+stem(y); 
+xlabel('Time'); 
+ylabel('Amplitude'); 
+title('Input y'); 
+subplot(2,2,3); 
+stem(z); 
+disp('cross correlation'); 
+disp(z); 
+xlabel('Time'); 
+ylabel('Amplitude'); 
+title('Cross correlation'); 
+subplot(2,2,4); 
+stem(a); 
+disp('Auto correlation'); 
+disp(a); 
+xlabel('Time'); 
+ylabel('Amplitude'); 
+title('Auto correlation'); 
+
