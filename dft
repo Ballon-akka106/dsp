@@ -1,0 +1,8 @@
+clc; w=0:1:10;
+x1=input('Enter the sequence'); N=length(x1);
+x2=fft(x1,N);
+subplot(2,2,1); stem(x2); xlabel('Time'); ylabel('Amplitude'); title('Spectrum of fft'); [h,o]=freqz(x2,1,w); m=20*log(abs(h)); subplot(2,2,2); stem(h); xlabel('Time'); ylabel('Amplitude');
+title('frequency Spectrum of fft'); subplot(2,2,3);
+plot(o/pi,m);
+xlabel('Time'); ylabel('Amplitude'); title('Phase Spectrum of fft'); subplot(2,2,4); plot(o/pi,angle(h)); xlabel('Time'); ylabel('Amplitude'); title('angle of fft');
+disp(x2);
