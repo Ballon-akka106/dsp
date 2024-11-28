@@ -1,0 +1,56 @@
+clc;
+clearall ;
+closeall ;
+%unit impulse%
+n=input('enter the unit impluse signal length');
+t=-n:1:n;
+Y=[zeros([1,n]),ones([1,1]),zeros([1,n])];
+subplot(2,3,1);
+plot(Y);
+xlabel('n->');
+ylabel('amplitude ->');
+title('unit impluse signal');
+%unit step%
+n1=input('enter the unit step signal length');
+t=0:1:n1-1;
+Y=ones(1,n1);
+subplot(2,3,2);
+plot(t,Y);
+xlabel('n->');
+ylabel('amplitude ->');
+title('unit step signal');
+n2=input('enter the unit ramp signal length');
+t=0:1:n2;
+Y=t;
+subplot(2,3,3);
+plot(t,Y);
+xlabel('n->');
+ylabel('amplitude ->');
+title('unit ramp signal');
+%exponentional signal%
+n3=input('enter the unit ramp signal length');
+t=0:1:n3;
+Y=exp(0.5*t);
+subplot(2,3,4);
+plot(t,Y);
+xlabel('n->');
+ylabel('amplitude ->');
+title('unit exponentional signal');
+
+%sine wave%
+t=0:0.00135:3.14;
+x=sin(2*3.14*t);
+subplot(2,3,5);
+plot(t,x);
+Xlabel('n->');
+Ylabel('amplitude');
+title('sine wave');
+%cosine wave%
+t=0:0.00135:3.14;
+x=cos(2*3.14*t);
+subplot(2,3,6);
+plot(t,x);
+Xlabel('n->');
+Ylabel('amplitude');
+title('cosine wave');
+
